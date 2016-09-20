@@ -4,7 +4,7 @@ RSpec.feature "Signing out signed-in users" do
 
   before do
     @john = User.create!(email: "john@example.com", password: "password")
-    vist "/"
+    visit "/"
 
     click_link "Sign in"
     fill_in "Email", with: @john.email
@@ -14,7 +14,7 @@ RSpec.feature "Signing out signed-in users" do
 
   scenario do
     visit "/"
-    click_link "Sign Out"
+    click_link "Sign out"
     expect(page).to have_content("Signed out successfully.")
   end
-end 
+end
